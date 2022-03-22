@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AgeInMinutesCalc</string>
+    <string name="minutes_since_date_rounded_to_nearest_completed_day">Minutes Since Selected Date</string>
+    <string name="calculate_your">Calculate Your</string>
+    <string name="age">Age</string>
+    <string name="in_minutes">In Minutes</string>
+    <string name="select_date">Select Date</string>
+    <string name="selected_date">Selected date</string>
+    <string name="test">##/##/####</string>
+</resources>
