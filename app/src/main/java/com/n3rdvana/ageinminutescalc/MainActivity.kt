@@ -54,11 +54,12 @@ class MainActivity : AppCompatActivity() {
                 val currentMonth = cal.get(Calendar.MONTH)
                 val currentDayOfMonth = cal.get(Calendar.DAY_OF_MONTH)
                 val currentDate = "${currentYear}/${currentMonth}/${currentDayOfMonth}"
-                val formattedCurDate = sdf.parse("${Calendar.getInstance()}")
-//                val selectedDateInMinutes = (formattedDate.time / 60000)
-                val currentDateInMinutes = (formattedCurDate.time / 60000)
-//                Log.i("selectedDateInMinutes", "$selectedDateInMinutes")
-                Log.i("FormattedCurDate", "$formattedCurDate")
+//                val formattedCurDate = sdf.parse("${Calendar.getInstance()}")
+                val selectedDateInMinutes = (formattedDate.time / 60000)
+//                val currentDateInMinutes = (formattedCurDate.time / 60000)
+////                Log.i("selectedDateInMinutes", "$selectedDateInMinutes")
+                Toast.makeText(this, "$selectedDateInMinutes , $currentDate", Toast.LENGTH_SHORT).show()
+//                Log.i("FormattedCurDate", "$formattedCurDate")
             },
             year,
             month,
