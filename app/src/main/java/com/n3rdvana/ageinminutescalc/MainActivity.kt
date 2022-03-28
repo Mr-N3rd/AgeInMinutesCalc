@@ -44,6 +44,8 @@ class MainActivity : AppCompatActivity() {
         DatePickerDialog(this,
             // when you launch the date picker Dialog and Set the date ** On Date Set - >
             { _, selectedYear, selectedMonth, selectedDayOfMonth -> // This lambda expression passes the selectedYear, SelectedMonth and selectedDayOfMonth from the above DatePicker launch
+                val sdf = SimpleDateFormat("mm/dd/yy", Locale.CANADA)
+                val currentDateSys =  (sdf.parse(sdf.format(System.currentTimeMillis())))
                 val selectedDate= "${selectedMonth+1}/${selectedDayOfMonth}/${selectedYear}"
                 val currentDate = "${month+1}/${dayOfMonth}/${year}"
 
@@ -51,19 +53,17 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "$selectedDate, $currentDate", Toast.LENGTH_SHORT).show()
 
-                val sdf = SimpleDateFormat("mm/dd/yy", Locale.CANADA)
 
                 val formattedDate = sdf.parse(selectedDate)
                 val formattedCurDate = sdf.parse(currentDate)
 
                 val selectedDateInMinutes = (formattedDate.time / 60000)
-                val currentDateInMinutes = (formattedCurDate.time / 60000)
+//                val currentDateInMinutes = (formattedCurDate.time / 60000)
 
-
+                val currentDateInMinutes = (currentDateSys.time / 60000)
                 val calculatedMinutes = currentDateInMinutes - selectedDateInMinutes
 
                 tvMinutes?.text = calculatedMinutes.toString()
-
 
             },
             year,
